@@ -1,593 +1,466 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book an Orthopaedic Consultation — OrthoNow Bengaluru</title>
-    <meta name="description" content="Expert orthopaedic care for knee and back pain. Book a consultation at OrthoNow — 9 clinics across Bengaluru, Hyderabad & Chennai. Same-week appointments available.">
-
-    <!-- Preconnect to nothing — zero external dependencies for max PageSpeed -->
-    <!-- Using system font stack to eliminate render-blocking font requests -->
-
+    <meta name="description"
+        content="Expert orthopaedic care for knee and back pain. Book a consultation at OrthoNow — 9 clinics across Bengaluru, Hyderabad & Chennai. Same-week appointments available.">
     <style>
-        /* ==========================================================
-           CSS RESET & CUSTOM PROPERTIES
-           Single-file design system — no external stylesheets.
-           Using system font stack for instant text rendering (no FOIT).
-           ========================================================== */
-
-        *, *::before, *::after {
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        :root {
-            /* Brand palette — healthcare-appropriate: trustworthy teal + warm accents */
-            --color-primary: #0d7c66;
-            --color-primary-dark: #095c4b;
-            --color-primary-light: #e6f5f1;
-            --color-accent: #f59e0b;
-            --color-text: #1a202c;
-            --color-text-secondary: #4a5568;
-            --color-bg: #ffffff;
-            --color-bg-section: #f7fafa;
-            --color-border: #e2e8f0;
-            --color-success: #059669;
-            --color-error: #dc2626;
-
-            /* Typography — system font stack */
-            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            --font-size-base: 16px;
-            --line-height-base: 1.6;
-
-            /* Spacing */
-            --space-xs: 4px;
-            --space-sm: 8px;
-            --space-md: 16px;
-            --space-lg: 24px;
-            --space-xl: 32px;
-            --space-2xl: 48px;
-            --space-3xl: 64px;
-
-            /* Border radius */
-            --radius-sm: 6px;
-            --radius-md: 10px;
-            --radius-lg: 16px;
-        }
-
-        html {
-            font-size: var(--font-size-base);
-            -webkit-text-size-adjust: 100%;
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: var(--font-family);
-            line-height: var(--line-height-base);
-            color: var(--color-text);
-            background-color: var(--color-bg);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background-color: white;
         }
 
-        img, svg { display: block; max-width: 100%; }
-        a { color: var(--color-primary); text-decoration: none; }
-        button { cursor: pointer; font-family: inherit; }
+        a {
+            color: #0d7c66;
+            text-decoration: none;
+        }
 
-        /* ==========================================================
-           LAYOUT — Mobile-first responsive container
-           ========================================================== */
+        button {
+            cursor: pointer;
+            font-family: inherit;
+        }
 
         .container {
             width: 100%;
             max-width: 680px;
             margin: 0 auto;
-            padding: 0 var(--space-md);
+            padding: 0 16px;
         }
-
-        /* ==========================================================
-           TOP BAR — Minimal trust strip
-           ========================================================== */
 
         .top-bar {
-            background: var(--color-primary);
-            color: #fff;
+            background-color: #0d7c66;
+            color: white;
             text-align: center;
-            padding: var(--space-sm) var(--space-md);
-            font-size: 0.8125rem;
+            padding: 8px 16px;
+            font-size: 13px;
             font-weight: 500;
-            letter-spacing: 0.01em;
         }
 
-        .top-bar strong { color: var(--color-accent); }
+        .top-bar strong {
+            color: #f59e0b;
+        }
 
-        /* ==========================================================
-           HEADER — Logo + contact
-           ========================================================== */
-
-        .site-header {
+        .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: var(--space-md) 0;
-            border-bottom: 1px solid var(--color-border);
+            padding: 16px 0;
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: var(--space-sm);
+            gap: 8px;
         }
 
-        /* Inline SVG logo — no image requests */
-        .logo-icon {
+        .logo-img {
             width: 36px;
             height: 36px;
-            flex-shrink: 0;
         }
 
-        .logo-text {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--color-primary);
+        .logo-txt {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0d7c66;
             line-height: 1.2;
         }
 
-        .logo-text span {
+        .logo-txt span {
             display: block;
-            font-size: 0.6875rem;
-            font-weight: 400;
-            color: var(--color-text-secondary);
-            letter-spacing: 0.04em;
+            font-size: 11px;
+            font-weight: normal;
+            color: #4a5568;
         }
 
-        .header-cta {
+        .btn {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 6px;
-            background: var(--color-primary);
-            color: #fff;
-            padding: var(--space-sm) var(--space-md);
-            border-radius: var(--radius-sm);
-            font-size: 0.875rem;
+            background-color: #0d7c66;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 14px;
             font-weight: 600;
-            transition: background 0.2s ease;
             border: none;
+            text-decoration: none;
         }
 
-        .header-cta:hover { background: var(--color-primary-dark); }
-
-        /* ==========================================================
-           HERO SECTION
-           ========================================================== */
+        .btn:hover {
+            background-color: #095c4b;
+        }
 
         .hero {
-            padding: var(--space-2xl) 0 var(--space-xl);
+            padding: 48px 0 32px 0;
             text-align: center;
-        }
-
-        /* Pain-point badge — draws attention */
-        .hero-badge {
-            display: inline-block;
-            background: var(--color-primary-light);
-            color: var(--color-primary);
-            font-size: 0.8125rem;
-            font-weight: 600;
-            padding: var(--space-xs) var(--space-md);
-            border-radius: 100px;
-            margin-bottom: var(--space-md);
         }
 
         .hero h1 {
-            font-size: clamp(1.625rem, 5vw, 2.25rem);
+            font-size: 32px;
             font-weight: 800;
             line-height: 1.2;
-            color: var(--color-text);
-            margin-bottom: var(--space-md);
+            color: #1a202c;
+            margin-bottom: 16px;
         }
 
-        .hero h1 em {
+        .hero em {
             font-style: normal;
-            color: var(--color-primary);
+            color: #0d7c66;
         }
 
-        .hero-sub {
-            font-size: 1.0625rem;
-            color: var(--color-text-secondary);
+        .hero .subtitle {
+            font-size: 17px;
+            color: #4a5568;
             max-width: 520px;
-            margin: 0 auto var(--space-lg);
+            margin: 0 auto 24px auto;
             line-height: 1.6;
         }
 
-        /* ==========================================================
-           FORM SECTION — The conversion core
-           ========================================================== */
-
-        .form-section {
-            background: var(--color-bg);
-            border: 2px solid var(--color-primary);
-            border-radius: var(--radius-lg);
-            padding: var(--space-lg);
-            margin-bottom: var(--space-2xl);
-            position: relative;
+        .form-box {
+            background-color: white;
+            border: 2px solid #0d7c66;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 48px;
         }
 
-        .form-section::before {
-            content: "";
-            position: absolute;
-            inset: -1px;
-            border-radius: var(--radius-lg);
-            background: linear-gradient(135deg, rgba(13,124,102,0.1), rgba(245,158,11,0.05));
-            z-index: -1;
-        }
-
-        .form-title {
-            font-size: 1.125rem;
-            font-weight: 700;
-            margin-bottom: var(--space-xs);
+        .form-box .title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 4px;
             text-align: center;
         }
 
-        .form-subtitle {
-            font-size: 0.875rem;
-            color: var(--color-text-secondary);
+        .form-box .subtitle {
+            font-size: 14px;
+            color: #4a5568;
             text-align: center;
-            margin-bottom: var(--space-lg);
+            margin-bottom: 24px;
         }
 
         .form-group {
-            margin-bottom: var(--space-md);
+            margin-bottom: 16px;
         }
 
         .form-group label {
             display: block;
-            font-size: 0.875rem;
+            font-size: 14px;
             font-weight: 600;
-            margin-bottom: var(--space-xs);
-            color: var(--color-text);
+            margin-bottom: 4px;
+            color: #1a202c;
         }
 
-        .form-group input {
+        .input {
             width: 100%;
-            padding: 12px var(--space-md);
-            border: 1.5px solid var(--color-border);
-            border-radius: var(--radius-sm);
-            font-size: 1rem;
-            font-family: inherit;
-            color: var(--color-text);
-            transition: border-color 0.2s ease, box-shadow 0.2s ease;
-            background: #fff;
+            padding: 12px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 16px;
+            color: #1a202c;
+            background-color: white;
         }
 
-        .form-group input::placeholder {
-            color: #a0aec0;
-        }
-
-        .form-group input:focus {
+        .input:focus {
             outline: none;
-            border-color: var(--color-primary);
-            box-shadow: 0 0 0 3px rgba(13, 124, 102, 0.12);
+            border-color: #0d7c66;
         }
 
-        /* Validation error state */
-        .form-group input.input-error {
-            border-color: var(--color-error);
-            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        .input.error-input {
+            border-color: #dc2626;
         }
 
-        .error-message {
-            font-size: 0.8125rem;
-            color: var(--color-error);
-            margin-top: var(--space-xs);
+        .error {
+            font-size: 13px;
+            color: #dc2626;
+            margin-top: 4px;
             display: none;
         }
 
-        .error-message.visible { display: block; }
-
-        .submit-btn {
+        .form-box .btn {
             width: 100%;
             padding: 14px;
-            background: var(--color-primary);
-            color: #fff;
-            font-size: 1.0625rem;
-            font-weight: 700;
-            border: none;
-            border-radius: var(--radius-sm);
+            font-size: 17px;
+            font-weight: bold;
+            margin-top: 8px;
             transition: background 0.2s ease, transform 0.1s ease;
-            margin-top: var(--space-sm);
         }
 
-        .submit-btn:hover { background: var(--color-primary-dark); }
-        .submit-btn:active { transform: scale(0.985); }
-        .submit-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
+        .form-box .btn:active {
+            transform: scale(0.985);
         }
 
-        .form-disclaimer {
-            font-size: 0.75rem;
-            color: var(--color-text-secondary);
+        .disclaimer {
+            font-size: 12px;
+            color: #4a5568;
             text-align: center;
-            margin-top: var(--space-sm);
+            margin-top: 8px;
             line-height: 1.5;
         }
 
-        /* ==========================================================
-           THANK-YOU STATE — replaces form on success
-           ========================================================== */
-
-        .thank-you {
+        .success-box {
             display: none;
             text-align: center;
-            padding: var(--space-xl) var(--space-md);
+            padding: 32px 16px;
         }
 
-        .thank-you.active { display: block; }
-
-        .thank-you-icon {
+        .success-icon {
             width: 56px;
             height: 56px;
-            margin: 0 auto var(--space-md);
-            background: var(--color-primary-light);
+            margin: 0 auto 16px auto;
+            background-color: #e6f5f1;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
         }
 
-        @keyframes scaleIn {
-            from { transform: scale(0); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+        .success-box h2 {
+            font-size: 22px;
+            font-weight: bold;
+            color: #0d7c66;
+            margin-bottom: 8px;
         }
 
-        .thank-you h2 {
-            font-size: 1.375rem;
-            font-weight: 700;
-            color: var(--color-primary);
-            margin-bottom: var(--space-sm);
-        }
-
-        .thank-you p {
-            color: var(--color-text-secondary);
-            font-size: 0.9375rem;
-            margin-bottom: var(--space-md);
+        .success-box p {
+            color: #4a5568;
+            font-size: 15px;
+            margin-bottom: 16px;
             line-height: 1.6;
         }
 
-        .thank-you .submitted-name { font-weight: 600; color: var(--color-text); }
-
-        /* ==========================================================
-           TRUST SECTION — Social proof & credentials
-           ========================================================== */
-
-        .trust-section {
-            padding: var(--space-xl) 0 var(--space-2xl);
+        .success-box .submitted-name {
+            font-weight: bold;
+            color: #1a202c;
         }
 
-        .trust-heading {
-            font-size: 0.75rem;
+        .trust {
+            padding: 32px 0 48px 0;
+        }
+
+        .trust-title {
+            font-size: 12px;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            color: var(--color-text-secondary);
+            color: #4a5568;
             text-align: center;
-            margin-bottom: var(--space-lg);
+            margin-bottom: 24px;
         }
 
         .trust-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: var(--space-md);
+            gap: 16px;
             text-align: center;
         }
 
-        .trust-item {
-            padding: var(--space-md);
-            background: var(--color-bg-section);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--color-border);
+        .trust-card {
+            padding: 16px;
+            background-color: #f7fafa;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
         }
 
-        .trust-number {
-            font-size: 1.75rem;
+        .trust-num {
+            font-size: 28px;
             font-weight: 800;
-            color: var(--color-primary);
+            color: #0d7c66;
             line-height: 1.2;
         }
 
-        .trust-label {
-            font-size: 0.75rem;
-            color: var(--color-text-secondary);
-            margin-top: var(--space-xs);
+        .trust-txt {
+            font-size: 12px;
+            color: #4a5568;
+            margin-top: 4px;
             line-height: 1.4;
         }
 
-        /* ==========================================================
-           DOCTOR CREDENTIALS — Key trust element
-           ========================================================== */
-
-        .doctors-section {
-            padding: 0 0 var(--space-2xl);
+        .doctors {
+            padding: 0 0 48px 0;
         }
 
-        .doctor-card {
+        .card {
             display: flex;
-            gap: var(--space-md);
-            padding: var(--space-md);
-            background: var(--color-bg-section);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--color-border);
-            margin-bottom: var(--space-md);
+            gap: 16px;
+            padding: 16px;
+            background-color: #f7fafa;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 16px;
             align-items: center;
         }
 
-        .doctor-avatar {
+        .avatar {
             width: 52px;
             height: 52px;
             border-radius: 50%;
-            background: var(--color-primary-light);
+            background-color: #e6f5f1;
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-shrink: 0;
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--color-primary);
+            font-size: 20px;
+            font-weight: bold;
+            color: #0d7c66;
         }
 
-        .doctor-info h3 {
-            font-size: 0.9375rem;
-            font-weight: 700;
-            color: var(--color-text);
+        .info h3 {
+            font-size: 15px;
+            font-weight: bold;
+            color: #1a202c;
             margin-bottom: 2px;
         }
 
-        .doctor-info p {
-            font-size: 0.8125rem;
-            color: var(--color-text-secondary);
+        .info p {
+            font-size: 13px;
+            color: #4a5568;
             line-height: 1.4;
         }
 
-        .doctor-info .speciality-tag {
+        .tag {
             display: inline-block;
-            font-size: 0.6875rem;
+            font-size: 11px;
             font-weight: 600;
-            color: var(--color-primary);
-            background: var(--color-primary-light);
+            color: #0d7c66;
+            background-color: #e6f5f1;
             padding: 2px 8px;
             border-radius: 100px;
             margin-top: 4px;
         }
 
-        /* ==========================================================
-           REVIEW — Patient testimonial
-           ========================================================== */
-
-        .review-section {
-            padding: 0 0 var(--space-2xl);
+        .reviews {
+            padding: 0 0 48px 0;
         }
 
-        .review-card {
-            background: var(--color-bg-section);
-            border: 1px solid var(--color-border);
-            border-radius: var(--radius-md);
-            padding: var(--space-lg);
+        .review {
+            background-color: #f7fafa;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 24px;
         }
 
-        .review-stars {
-            color: var(--color-accent);
-            font-size: 1.125rem;
-            margin-bottom: var(--space-sm);
+        .stars {
+            color: #f59e0b;
+            font-size: 18px;
+            margin-bottom: 8px;
             letter-spacing: 2px;
         }
 
-        .review-text {
-            font-size: 0.9375rem;
-            color: var(--color-text);
+        .review-txt {
+            font-size: 15px;
+            color: #1a202c;
             line-height: 1.7;
-            margin-bottom: var(--space-md);
+            margin-bottom: 16px;
             font-style: italic;
         }
 
-        .review-author {
-            font-size: 0.8125rem;
-            color: var(--color-text-secondary);
+        .author {
+            font-size: 13px;
+            color: #4a5568;
         }
 
-        .review-author strong {
-            color: var(--color-text);
-            font-weight: 600;
+        .author strong {
+            color: #1a202c;
+            font-weight: bold;
         }
 
-        /* ==========================================================
-           BOTTOM CTA — Final push
-           ========================================================== */
-
-        .bottom-cta {
-            background: var(--color-primary);
-            color: #fff;
+        .bottom-box {
+            background-color: #0d7c66;
+            color: white;
             text-align: center;
-            padding: var(--space-xl) var(--space-md);
-            border-radius: var(--radius-lg);
-            margin-bottom: var(--space-2xl);
+            padding: 32px 16px;
+            border-radius: 16px;
+            margin-bottom: 48px;
         }
 
-        .bottom-cta h2 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: var(--space-sm);
+        .bottom-box h2 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
         }
 
-        .bottom-cta p {
-            font-size: 0.9375rem;
+        .bottom-box p {
+            font-size: 15px;
+            color: white;
             opacity: 0.9;
-            margin-bottom: var(--space-md);
+            margin-bottom: 16px;
         }
 
-        .bottom-cta-btn {
+        .btn-bottom {
             display: inline-block;
-            background: #fff;
-            color: var(--color-primary);
-            padding: 12px var(--space-xl);
-            font-size: 1rem;
-            font-weight: 700;
+            background-color: white;
+            color: #0d7c66;
+            padding: 12px 32px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 6px;
             border: none;
-            border-radius: var(--radius-sm);
-            transition: transform 0.15s ease, box-shadow 0.15s ease;
+            text-decoration: none;
         }
 
-        .bottom-cta-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        .btn-bottom:hover {
+            background-color: #f7fafa;
         }
 
-        /* ==========================================================
-           FOOTER
-           ========================================================== */
-
-        .site-footer {
+        .footer {
             text-align: center;
-            padding: var(--space-lg) var(--space-md);
-            border-top: 1px solid var(--color-border);
-            font-size: 0.8125rem;
-            color: var(--color-text-secondary);
+            padding: 24px 16px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 13px;
+            color: #4a5568;
         }
 
-        .footer-links {
-            margin-top: var(--space-sm);
+        .links {
+            margin-top: 8px;
         }
 
-        .footer-links a {
-            color: var(--color-text-secondary);
-            margin: 0 var(--space-sm);
+        .links a {
+            color: #4a5568;
+            margin: 0 8px;
         }
 
-        .footer-links a:hover { color: var(--color-primary); }
-
-        /* ==========================================================
-           RESPONSIVE — Adjustments for very small screens
-           ========================================================== */
+        .links a:hover {
+            color: #0d7c66;
+        }
 
         @media (max-width: 480px) {
             .trust-grid {
                 grid-template-columns: 1fr;
-                gap: var(--space-sm);
+                gap: 8px;
             }
 
-            .trust-item {
+            .trust-card {
                 display: flex;
                 align-items: center;
-                gap: var(--space-md);
+                gap: 16px;
                 text-align: left;
             }
 
-            .trust-number { font-size: 1.375rem; }
+            .trust-num {
+                font-size: 22px;
+            }
 
-            .hero { padding: var(--space-xl) 0 var(--space-md); }
+            .hero {
+                padding: 24px 0 16px 0;
+            }
 
-            .doctor-card {
+            .hero h1 {
+                font-size: 26px;
+            }
+
+            .card {
                 flex-direction: column;
                 text-align: center;
             }
@@ -598,10 +471,6 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
-
-        /* ==========================================================
-           UTILITY — Visually hidden (accessibility)
-           ========================================================== */
 
         .sr-only {
             position: absolute;
@@ -616,36 +485,33 @@
         }
     </style>
 </head>
+
 <body>
 
-    <!-- ============================================================
-         TOP BAR — Urgency + trust micro-copy
-         ============================================================ -->
     <div class="top-bar" role="banner">
-        Same-week appointments available · <strong>9 Clinics</strong> across Bengaluru, Hyderabad & Chennai
+        Same-week appointments available · <strong>9 Clinics</strong> across Bengaluru
     </div>
 
-    <!-- ============================================================
-         HEADER — Logo + Call CTA
-         ============================================================ -->
-    <header class="site-header container">
+    <header class="header container">
         <div class="logo">
-            <!-- Inline SVG: bone/joint icon — no external image request -->
-            <svg class="logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect width="36" height="36" rx="8" fill="#0d7c66" fill-opacity="0.1"/>
-                <path d="M18 8c-1.5 0-2.8.6-3.6 1.5C13.6 10.4 13 11.5 13 13c0 1.2.4 2.2 1 3l-1 8h10l-1-8c.6-.8 1-1.8 1-3 0-1.5-.6-2.6-1.4-3.5C20.8 8.6 19.5 8 18 8z" fill="#0d7c66" fill-opacity="0.7"/>
-                <circle cx="14.5" cy="26" r="2.5" fill="#0d7c66" fill-opacity="0.5"/>
-                <circle cx="21.5" cy="26" r="2.5" fill="#0d7c66" fill-opacity="0.5"/>
+            <svg class="logo-img" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect width="36" height="36" rx="8" fill="#0d7c66" fill-opacity="0.1" />
+                <path
+                    d="M18 8c-1.5 0-2.8.6-3.6 1.5C13.6 10.4 13 11.5 13 13c0 1.2.4 2.2 1 3l-1 8h10l-1-8c.6-.8 1-1.8 1-3 0-1.5-.6-2.6-1.4-3.5C20.8 8.6 19.5 8 18 8z"
+                    fill="#0d7c66" fill-opacity="0.7" />
+                <circle cx="14.5" cy="26" r="2.5" fill="#0d7c66" fill-opacity="0.5" />
+                <circle cx="21.5" cy="26" r="2.5" fill="#0d7c66" fill-opacity="0.5" />
             </svg>
-            <div class="logo-text">
+            <div class="logo-txt">
                 OrthoNow
                 <span>Expert Orthopaedic Care</span>
             </div>
         </div>
-
-        <!-- Call Now — tel: link for direct dialling on mobile -->
-        <a href="tel:+918001234567" class="header-cta" id="header-call-btn" aria-label="Call OrthoNow now">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.6 1.3A1 1 0 014.7 1l1.8 1.8a1 1 0 010 1.4L5.4 5.4a7.4 7.4 0 005.2 5.2l1.2-1.1a1 1 0 011.4 0L15 11.3a1 1 0 01-.3 1.6l-2.2 1A1 1 0 0111.3 14 12.3 12.3 0 012 2.7a1 1 0 01.6-1.4l1-.3z"/></svg>
+        <a href="tel:+919801047444" class="btn" id="header-call-btn" aria-label="Call OrthoNow now">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <path
+                    d="M3.6 1.3A1 1 0 014.7 1l1.8 1.8a1 1 0 010 1.4L5.4 5.4a7.4 7.4 0 005.2 5.2l1.2-1.1a1 1 0 011.4 0L15 11.3a1 1 0 01-.3 1.6l-2.2 1A1 1 0 0111.3 14 12.3 12.3 0 012 2.7a1 1 0 01.6-1.4l1-.3z" />
+            </svg>
             Call Now
         </a>
     </header>
@@ -653,80 +519,51 @@
     <main>
         <div class="container">
 
-            <!-- ============================================================
-                 HERO — Headline + Subheadline
-                 Targeted at working professionals 28–50 in Bengaluru
-                 with knee or back pain.
-                 ============================================================ -->
             <section class="hero">
-                <div class="hero-badge">Knee Pain · Back Pain · Sports Injuries</div>
-                <h1>Stop living with the pain.<br><em>Get an expert orthopaedic opinion.</em></h1>
-                <p class="hero-sub">
-                    Bengaluru's trusted orthopaedic specialists — 15,000+ patients treated.
-                    Book a consultation and get a clear diagnosis in your first visit.
+                <h1>Knee or Back Pain Affecting Your Work?<br><em>Get an expert orthopaedic opinion.</em></h1>
+                <p class="subtitle">
+                    If sitting, standing, or travelling is becoming uncomfortable, book a consultation with an OrthoNow
+                    orthopaedic specialist.
                 </p>
             </section>
 
-            <!-- ============================================================
-                 FORM — The conversion core
-                 2 fields only (Name + Phone) to minimize friction.
-                 Form submit fires dataLayer push + shows thank-you state.
-                 ============================================================ -->
-            <section class="form-section" id="booking-form-section">
-
-                <!-- FORM STATE -->
+            <section class="form-box" id="booking-form-section">
                 <div id="form-state">
-                    <h2 class="form-title">Book Your Consultation</h2>
-                    <p class="form-subtitle">Free. Takes 30 seconds. We'll call to confirm your slot.</p>
+                    <h2 class="title">Book Your Consultation</h2>
+                    <p class="subtitle">Complete the form to request a consultation.</p>
 
                     <form id="consultation-form" novalidate>
                         <div class="form-group">
                             <label for="patient-name">Your Name</label>
-                            <input
-                                type="text"
-                                id="patient-name"
-                                name="patient_name"
-                                placeholder="e.g. Priya Sharma"
-                                autocomplete="name"
-                                required
-                                aria-required="true"
-                            >
-                            <p class="error-message" id="name-error" role="alert">Please enter your name</p>
+                            <input type="text" id="patient-name" name="patient_name" class="input"
+                                placeholder="e.g. Priya Sharma" autocomplete="name" required aria-required="true">
+                            <p class="error" id="name-error" role="alert">Please enter your name</p>
                         </div>
 
                         <div class="form-group">
                             <label for="patient-phone">Phone Number</label>
-                            <input
-                                type="tel"
-                                id="patient-phone"
-                                name="patient_phone"
-                                placeholder="e.g. 98765 43210"
-                                inputmode="numeric"
-                                pattern="[0-9]{10}"
-                                maxlength="10"
-                                autocomplete="tel"
-                                required
-                                aria-required="true"
-                            >
-                            <p class="error-message" id="phone-error" role="alert">Please enter a valid 10-digit mobile number</p>
+                            <input type="tel" id="patient-phone" name="patient_phone" class="input"
+                                placeholder="e.g. 98765 43210" inputmode="numeric" pattern="[0-9]{10}" maxlength="10"
+                                autocomplete="tel" required aria-required="true">
+                            <p class="error" id="phone-error" role="alert">Please enter a valid 10-digit mobile number
+                            </p>
                         </div>
 
-                        <button type="submit" class="submit-btn" id="submit-btn">
+                        <button type="submit" class="btn" id="submit-btn">
                             Book My Free Consultation →
                         </button>
 
-                        <p class="form-disclaimer">
-                            No spam. We'll call you once to confirm your appointment.<br>
-                            By submitting, you agree to our Privacy Policy.
+                        <p class="disclaimer">
+                            By submitting this form, you agree to our privacy policy.
                         </p>
                     </form>
                 </div>
 
-                <!-- THANK-YOU STATE — shown after successful submission -->
-                <div class="thank-you" id="thank-you-state" aria-live="polite">
-                    <div class="thank-you-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <polyline points="20 6 9 17 4 12"/>
+                <div class="success-box" id="thank-you-state" aria-live="polite">
+                    <div class="success-icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polyline points="20 6 9 17 4 12" />
                         </svg>
                     </div>
                     <h2>You're Booked!</h2>
@@ -734,271 +571,193 @@
                         Thank you, <span class="submitted-name" id="submitted-name"></span>.
                         Our team will call you within 2 hours to confirm your appointment slot.
                     </p>
-                    <p style="font-size:0.8125rem;">
-                        Need immediate help?
-                        <a href="tel:+918001234567">Call us directly</a> or
-                        <a href="https://wa.me/918001234567" target="_blank" rel="noopener">WhatsApp us</a>.
-                    </p>
                 </div>
             </section>
 
-            <!-- ============================================================
-                 TRUST METRICS — Numbers that build confidence
-                 ============================================================ -->
-            <section class="trust-section" aria-label="Trust metrics">
-                <p class="trust-heading">Why patients choose OrthoNow</p>
+            <section class="trust" aria-label="Trust metrics">
+                <p class="trust-title">Why patients choose OrthoNow</p>
                 <div class="trust-grid">
-                    <div class="trust-item">
-                        <div class="trust-number">15,000+</div>
-                        <div class="trust-label">Patients treated<br>across 9 clinics</div>
+                    <div class="trust-card">
+                        <div class="trust-num">15,000+</div>
+                        <div class="trust-txt">Patients treated<br>across 9 clinics</div>
                     </div>
-                    <div class="trust-item">
-                        <div class="trust-number">4.8★</div>
-                        <div class="trust-label">Google rating<br>from 2,400+ reviews</div>
+                    <div class="trust-card">
+                        <div class="trust-num">4.8★</div>
+                        <div class="trust-txt">Google rating<br>from 2,400+ reviews</div>
                     </div>
-                    <div class="trust-item">
-                        <div class="trust-number">12+</div>
-                        <div class="trust-label">Senior orthopaedic<br>specialists</div>
+                    <div class="trust-card">
+                        <div class="trust-num">12+</div>
+                        <div class="trust-txt">Senior orthopaedic<br>specialists</div>
                     </div>
                 </div>
             </section>
 
-            <!-- ============================================================
-                 DOCTOR CREDENTIALS — Specific trust, not generic
-                 ============================================================ -->
-            <section class="doctors-section" aria-label="Our doctors">
-                <div class="doctor-card">
-                    <div class="doctor-avatar" aria-hidden="true">RK</div>
-                    <div class="doctor-info">
+            <section class="doctors" aria-label="Our doctors">
+                <div class="card">
+                    <div class="avatar" aria-hidden="true">RK</div>
+                    <div class="info">
                         <h3>Dr. Rajesh Kumar</h3>
                         <p>MS Ortho, AIIMS Delhi · 18 years experience</p>
-                        <span class="speciality-tag">Knee Replacement Specialist</span>
+                        <span class="tag">Knee Replacement Specialist</span>
                     </div>
                 </div>
-                <div class="doctor-card">
-                    <div class="doctor-avatar" aria-hidden="true">SM</div>
-                    <div class="doctor-info">
+                <div class="card">
+                    <div class="avatar" aria-hidden="true">SM</div>
+                    <div class="info">
                         <h3>Dr. Sneha Menon</h3>
                         <p>DNB Ortho, CMC Vellore · 14 years experience</p>
-                        <span class="speciality-tag">Spine & Back Pain Specialist</span>
+                        <span class="tag">Spine & Back Pain Specialist</span>
                     </div>
                 </div>
             </section>
 
-            <!-- ============================================================
-                 PATIENT REVIEW — Real-sounding testimonial
-                 ============================================================ -->
-            <section class="review-section" aria-label="Patient review">
-                <div class="review-card">
-                    <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-                    <p class="review-text">
+            <section class="reviews" aria-label="Patient review">
+                <div class="review">
+                    <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                    <p class="review-txt">
                         "I had been ignoring my knee pain for over a year. Dr. Kumar diagnosed the problem
                         in my first visit and explained everything clearly. After 3 months of treatment,
                         I'm back to my morning walks. The booking process was very simple — I got a call
                         within an hour of filling the form."
                     </p>
-                    <p class="review-author">
+                    <p class="author">
                         <strong>Arvind S.</strong> · IT Professional, Koramangala · Visited Jan 2026
                     </p>
                 </div>
             </section>
 
-            <!-- ============================================================
-                 BOTTOM CTA — Final conversion push
-                 ============================================================ -->
-            <section class="bottom-cta">
+            <section class="bottom-box">
                 <h2>Don't wait for the pain to get worse.</h2>
                 <p>Early diagnosis means faster recovery. Book your consultation today.</p>
-                <a href="#booking-form-section" class="bottom-cta-btn">Book Now — It's Free</a>
+                <a href="#booking-form-section" class="btn btn-bottom">Book Now — It's Free</a>
             </section>
 
         </div>
     </main>
 
-    <!-- ============================================================
-         FOOTER
-         ============================================================ -->
-    <footer class="site-footer">
+    <footer class="footer">
         <p>&copy; 2026 OrthoNow Orthopaedic Clinics. All rights reserved.</p>
-        <div class="footer-links">
+        <div class="links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
             <a href="#">Contact Us</a>
         </div>
     </footer>
 
-    <!-- ============================================================
-         JAVASCRIPT
-         All logic is vanilla JS. No frameworks, no external scripts.
-         ============================================================ -->
     <script>
-        /**
-         * OrthoNow Landing Page — Form Handler
-         *
-         * Handles:
-         * 1. Form validation (name + 10-digit Indian mobile phone)
-         * 2. GTM dataLayer push on valid submission
-         * 3. Thank-you state transition without page reload
-         *
-         * IMPORTANT: window.dataLayer.push fires ONLY on valid form submission,
-         * never on page load. This is intentional — GTM triggers must listen
-         * for the 'consultation_form_submitted' custom event.
-         */
+        // Setup dataLayer array
+        window.dataLayer = window.dataLayer || [];
 
-        (function () {
-            'use strict';
+        // Elements
+        var form = document.getElementById("consultation-form");
+        var nameInput = document.getElementById("patient-name");
+        var phoneInput = document.getElementById("patient-phone");
+        var nameError = document.getElementById("name-error");
+        var phoneError = document.getElementById("phone-error");
+        var btn = document.getElementById("submit-btn");
+        var formBox = document.getElementById("form-state");
+        var successMsg = document.getElementById("thank-you-state");
+        var userName = document.getElementById("submitted-name");
+        var callBtn = document.getElementById("header-call-btn");
 
-            // Initialize the GTM dataLayer if it doesn't exist yet.
-            // GTM's own snippet does this too, but we initialize early
-            // so the push works even if GTM hasn't loaded (for testing).
-            window.dataLayer = window.dataLayer || [];
+        // Validate function
+        function validateForm() {
+            var name = nameInput.value.trim();
+            var phone = phoneInput.value.replace(/\s/g, "");
 
-            // Cache DOM references
-            var form = document.getElementById('consultation-form');
-            var nameInput = document.getElementById('patient-name');
-            var phoneInput = document.getElementById('patient-phone');
-            var nameError = document.getElementById('name-error');
-            var phoneError = document.getElementById('phone-error');
-            var submitBtn = document.getElementById('submit-btn');
-            var formState = document.getElementById('form-state');
-            var thankYouState = document.getElementById('thank-you-state');
-            var submittedNameEl = document.getElementById('submitted-name');
+            var isNameValid = name.length >= 2;
+            var isPhoneValid = /^[6-9]\d{9}$/.test(phone);
 
-            /**
-             * Validates a 10-digit Indian mobile number.
-             * Must be exactly 10 digits, starting with 6-9.
-             * @param {string} phone - The phone number string to validate.
-             * @returns {boolean}
-             */
-            function isValidPhone(phone) {
-                var cleaned = phone.replace(/\s/g, '');
-                return /^[6-9]\d{9}$/.test(cleaned);
+            // Validate Name
+            if (isNameValid) {
+                nameInput.classList.remove("error-input");
+                nameError.style.display = "none";
+            } else {
+                nameInput.classList.add("error-input");
+                nameError.style.display = "block";
             }
 
-            /**
-             * Validates that the name is non-empty and at least 2 characters.
-             * @param {string} name - The name string to validate.
-             * @returns {boolean}
-             */
-            function isValidName(name) {
-                return name.trim().length >= 2;
+            // Validate Phone
+            if (isPhoneValid) {
+                phoneInput.classList.remove("error-input");
+                phoneError.style.display = "none";
+            } else {
+                phoneInput.classList.add("error-input");
+                phoneError.style.display = "block";
             }
 
-            /**
-             * Shows or hides an error message for a form field.
-             * @param {HTMLElement} input - The input element.
-             * @param {HTMLElement} errorEl - The error message element.
-             * @param {boolean} isValid - Whether the field is valid.
-             */
-            function toggleError(input, errorEl, isValid) {
-                if (isValid) {
-                    input.classList.remove('input-error');
-                    errorEl.classList.remove('visible');
-                } else {
-                    input.classList.add('input-error');
-                    errorEl.classList.add('visible');
-                }
+            return isNameValid && isPhoneValid;
+        }
+
+        // Real-time checks
+        nameInput.addEventListener("input", function () {
+            if (nameInput.value.trim().length >= 2) {
+                nameInput.classList.remove("error-input");
+                nameError.style.display = "none";
             }
+        });
 
-            // Clear error styling when user starts typing
-            nameInput.addEventListener('input', function () {
-                if (nameInput.classList.contains('input-error') && isValidName(nameInput.value)) {
-                    toggleError(nameInput, nameError, true);
-                }
-            });
+        phoneInput.addEventListener("input", function () {
+            this.value = this.value.replace(/[^0-9]/g, "");
+            var phone = this.value.replace(/\s/g, "");
+            if (/^[6-9]\d{9}$/.test(phone)) {
+                phoneInput.classList.remove("error-input");
+                phoneError.style.display = "none";
+            }
+        });
 
-            phoneInput.addEventListener('input', function () {
-                // Only allow digits
-                this.value = this.value.replace(/[^0-9]/g, '');
-                if (phoneInput.classList.contains('input-error') && isValidPhone(phoneInput.value)) {
-                    toggleError(phoneInput, phoneError, true);
-                }
-            });
+        // Form submit event
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-            /**
-             * Form submit handler.
-             * Validates inputs, fires dataLayer push, and shows thank-you state.
-             */
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
+            var isValid = validateForm();
 
-                var name = nameInput.value.trim();
-                var phone = phoneInput.value.replace(/\s/g, '');
-
-                // Validate both fields
-                var nameValid = isValidName(name);
-                var phoneValid = isValidPhone(phone);
-
-                toggleError(nameInput, nameError, nameValid);
-                toggleError(phoneInput, phoneError, phoneValid);
-
-                // If validation fails, focus the first invalid field and stop
-                if (!nameValid) {
+            if (!isValid) {
+                if (nameInput.value.trim().length < 2) {
                     nameInput.focus();
-                    return;
-                }
-                if (!phoneValid) {
+                } else {
                     phoneInput.focus();
-                    return;
                 }
-
-                // Disable button to prevent double submission
-                submitBtn.disabled = true;
-                submitBtn.textContent = 'Submitting...';
-
-                // =====================================================
-                // GTM dataLayer push — fires ONLY on valid submission.
-                //
-                // This is a custom event. GTM must have a Custom Event
-                // trigger listening for 'consultation_form_submitted'.
-                // The GA4 Event tag and Google Ads Conversion tag should
-                // both fire on this trigger.
-                // =====================================================
-                window.dataLayer.push({
-                    'event': 'consultation_form_submitted',
-                    'form_name': 'consultation_booking',
-                    'submission_source': 'landing_page',
-                    'clinic_preference': 'Bengaluru'
-                });
-
-                // Log to console so the dataLayer push can be verified
-                // during Loom walkthrough and testing.
-                console.log('[OrthoNow] dataLayer push fired:', {
-                    event: 'consultation_form_submitted',
-                    form_name: 'consultation_booking',
-                    submission_source: 'landing_page',
-                    clinic_preference: 'Bengaluru'
-                });
-                console.log('[OrthoNow] Full dataLayer:', window.dataLayer);
-
-                // =====================================================
-                // Show thank-you state (no page reload)
-                // =====================================================
-                submittedNameEl.textContent = name;
-                formState.style.display = 'none';
-                thankYouState.classList.add('active');
-
-                // Scroll to the thank-you message so it's visible
-                thankYouState.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            });
-
-            // =====================================================
-            // Track "Call Now" button click — dataLayer push
-            // =====================================================
-            var callBtn = document.getElementById('header-call-btn');
-            if (callBtn) {
-                callBtn.addEventListener('click', function () {
-                    window.dataLayer.push({
-                        'event': 'call_now_click',
-                        'click_url': callBtn.href,
-                        'page_location': window.location.href,
-                        'button_position': 'header'
-                    });
-                    console.log('[OrthoNow] Call Now click tracked');
-                });
+                return;
             }
-        })();
-    </script>
 
+            btn.disabled = true;
+            btn.textContent = "Submitting...";
+
+            // Push to dataLayer
+            var payload = {
+                "event": "consultation_form_submitted",
+                "form_name": "consultation_booking",
+                "submission_source": "landing_page",
+                "clinic_preference": "Bengaluru"
+            };
+            window.dataLayer.push(payload);
+
+            console.log("dataLayer push:", payload);
+
+            // Show success msg
+            userName.textContent = nameInput.value.trim();
+            formBox.style.display = "none";
+            successMsg.style.display = "block";
+
+            // Scroll down
+            successMsg.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+
+        // Call track
+        if (callBtn) {
+            callBtn.addEventListener("click", function () {
+                var callPayload = {
+                    "event": "call_now_click",
+                    "click_url": callBtn.href,
+                    "page_location": window.location.href,
+                    "button_position": "header"
+                };
+                window.dataLayer.push(callPayload);
+                console.log("dataLayer push (call):", callPayload);
+            });
+        }
+    </script>
 </body>
+
 </html>
